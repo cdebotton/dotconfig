@@ -1,0 +1,7 @@
+theme = catppuccin-mocha
+cursor-click-to-move = true
+mouse-hide-while-typing = true
+mouse-shift-capture = true
+window-decoration = true
+window-colorspace = display-p3
+shell-integration-features = cursor
