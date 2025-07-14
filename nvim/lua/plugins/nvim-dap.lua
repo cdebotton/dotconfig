@@ -14,39 +14,6 @@ return {
       build = "npm i && npm run compile vsDebugServerBundle && mv dist out",
     },
   },
-  -- keys = {
-  --   -- normal mode is default
-  --   {
-  --     "<leader>d",
-  --     function()
-  --       require("dap").toggle_breakpoint()
-  --     end,
-  --   },
-  --   {
-  --     "<leader>c",
-  --     function()
-  --       require("dap").continue()
-  --     end,
-  --   },
-  --   {
-  --     "<C-'>",
-  --     function()
-  --       require("dap").step_over()
-  --     end,
-  --   },
-  --   {
-  --     "<C-;>",
-  --     function()
-  --       require("dap").step_into()
-  --     end,
-  --   },
-  --   {
-  --     "<C-:>",
-  --     function()
-  --       require("dap").step_out()
-  --     end,
-  --   },
-  -- },
   config = function()
     require("dap-vscode-js").setup({
       debugger_path = vim.fn.stdpath("data") .. "/lazy/vscode-js-debug",

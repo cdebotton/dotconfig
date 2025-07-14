@@ -61,6 +61,10 @@ vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 
 vim.cmd("colorscheme catppuccin")
 
+-- Make line numbers 10% lighter
+vim.api.nvim_set_hl(0, "LineNr", { fg = "#6f7285" })
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ffffff" })
+
 local namespace = vim.api.nvim_create_namespace("dap-hlng")
 vim.api.nvim_set_hl(namespace, "DapBreakpoint", { fg = "#eaeaeb", bg = "#ffffff" })
 vim.api.nvim_set_hl(namespace, "DapLogPoint", { fg = "#eaeaeb", bg = "#ffffff" })

@@ -6,3 +6,19 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+
+-- Auto-format and lint Go files on save
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--   pattern = "*.go",
+--   callback = function()
+--     -- Format the file
+--     vim.lsp.buf.format({ async = false })
+--
+--     -- Run golangci-lint with --fix
+--     local file = vim.fn.expand("%:p")
+--     vim.fn.system("golangci-lint run --fix " .. vim.fn.shellescape(file))
+--
+--     -- Reload the buffer to show lint fixes
+--     vim.cmd("checktime")
+--   end,
+-- })
