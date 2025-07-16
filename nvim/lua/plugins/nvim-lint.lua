@@ -8,9 +8,22 @@ return {
     opts.linters_by_ft.less = { "stylelint" }
     opts.linters_by_ft.sass = { "stylelint" }
     opts.linters_by_ft.svelte = { "stylelint" }
+    opts.linters_by_ft.go = { "golangcilint" }
 
     -- Optional: Add condition to only run when config exists
     opts.linters = opts.linters or {}
+
+    -- Configure golangci-lint to only run when config exists
+    opts.linters.golangcilint = {
+      condition = function(ctx)
+        return vim.fs.find({
+          ".golangci.yml",
+          ".golangci.yaml",
+          ".golangci.json",
+        }, { path = ctx.filename, upward = true })[1] ~= nil
+      end,
+    }
+
     opts.linters.stylelint = opts.linters.stylelint or {}
     opts.linters.stylelint = {
       condition = function(ctx)
@@ -50,7 +63,6 @@ return {
       end
 
       -- Return nil if not found
-      vim.notify("stylelint not found", vim.log.levels.WARN)
       return nil
     end
 
@@ -73,6 +85,13 @@ return {
         vim.fn.system(cmd)
 
         -- Then lint for remaining issues
+        require("lint").try_lint()
+      end,
+    })
+
+    vim.api.nvim_create_autocmd("BufWritePost", {
+      pattern = { "*.go" },
+      callback = function()
         require("lint").try_lint()
       end,
     })
