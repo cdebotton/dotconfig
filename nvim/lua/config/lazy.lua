@@ -61,6 +61,10 @@ vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 
 vim.cmd("colorscheme catppuccin")
 
+-- Make background transparent to show tmux background
+vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+
 -- Make line numbers 10% lighter
 vim.api.nvim_set_hl(0, "LineNr", { fg = "#6f7285" })
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ffffff" })
