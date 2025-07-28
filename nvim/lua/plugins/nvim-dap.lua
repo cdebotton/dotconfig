@@ -9,7 +9,6 @@ return {
     -- build debugger from source
     {
       "microsoft/vscode-js-debug",
-      -- version = "1.76.1",
       version = "1.x",
       build = "npm i && npm run compile vsDebugServerBundle && mv dist out",
     },
@@ -18,73 +17,49 @@ return {
     require("dap-vscode-js").setup({
       debugger_path = vim.fn.stdpath("data") .. "/lazy/vscode-js-debug",
       adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" },
+      node_path = "node",
+      -- Log file path (useful for debugging setup issues)
+      log_file_path = vim.fn.stdpath("cache") .. "/dap_vscode_js.log",
+      log_file_level = vim.log.levels.DEBUG,
+      log_console_level = vim.log.levels.ERROR,
+      debugger_cmd = { vim.fn.stdpath("data") .. "/mason/bin/js-debug-adapter" },
     })
 
-    require("dap").adapters["pwa-node"] = {
-      type = "server",
-      host = "::1",
-      port = "${port}",
-      executable = {
-        command = "js-debug-adapter",
-        args = {
-          "${port}",
+    for _, adapter in pairs({ "pwa-node", "pwa-chrome" }) do
+      require("dap").adapters[adapter] = {
+        type = "server",
+        host = "localhost",
+        port = "${port}",
+        executable = {
+          command = "js-debug-adapter",
+          args = { "${port}" },
         },
-      },
-    }
-
-    --- Gets a path to a package in the Mason registry.
-    --- Prefer this to `get_package`, since the package might not always be
-    --- available yet and trigger errors.
-    ---@param pkg string
-    ---@param path? string
-    local function get_pkg_path(pkg, path)
-      pcall(require, "mason")
-      local root = vim.env.MASON or (vim.fn.stdpath("data") .. "/mason")
-      path = path or ""
-      local ret = root .. "/packages/" .. pkg .. "/" .. path
-      return ret
+      }
     end
 
-    require("dap").adapters["pwa-chrome"] = {
-      type = "server",
-      host = "localhost",
-      port = "${port}",
-      executable = {
-        command = "node",
-        args = {
-          get_pkg_path("js-debug-adapter", "/js-debug/src/dapDebugServer.js"),
-          "${port}",
-        },
-      },
-    }
-
-    for _, language in ipairs({ "typescript", "typescriptreact", "javascript", "javascriptreact", "svelte" }) do
+    for _, language in pairs({ "typescript", "typescriptreact", "javascript", "javascriptreact", "svelte" }) do
       require("dap").configurations[language] = {
-        -- attach to a node process that has been started with
-        -- `--inspect` for longrunning tasks or `--inspect-brk` for short tasks
-        -- npm script -> `node --inspect-brk ./node_modules/.bin/vite dev`
-
         {
-          name = "Attach debugger to existing `node --inspect` process",
-          -- for compiled languages like TypeScript or Svelte.js
+          name = "Debug node",
+          type = "pwa-node",
+          request = "launch",
           sourceMaps = true,
-          -- resolve source maps in nested locations while ignoring node_modules
           resolveSourceMapLocations = {
             "${workspaceFolder}/**",
             "!**/node_modules/**",
           },
-          skipFiles = { "${workspaceFolder}/node_modules/**/*.js" },
-          type = "pwa-node",
-          request = "attach",
-          address = "localhost",
-          port = 9229,
+          runtimeExecutable = "npm",
+          runtimeArgs = { "run", "dev" },
+          rootPath = "${workspaceFolder}",
           cwd = "${workspaceFolder}",
-          restart = true,
+          console = "integratedTerminal",
+          internalConsoleOptions = "neverOpen",
+          skipFiles = { "<node_internals>/**", "${workspaceFolder}/node_modules/**/*.js" },
         },
         {
           type = "pwa-chrome",
           request = "launch",
-          name = "Debug SvelteKit in Dia",
+          name = "Debug web",
           url = "http://localhost:5173",
           protocol = "inspector",
           port = 9222,
@@ -95,36 +70,22 @@ return {
           skipFiles = { "**/node_modules/**/*", "**/@vite/*", "**/src/client/*", "**/src/*" },
         },
         {
-          type = "pwa-chrome",
-          name = "Launch Chrome to debug client",
-          request = "launch",
-          url = "http://localhost:5173",
+          name = "Attach to running process",
+          type = "pwa-node",
+          request = "attach",
           sourceMaps = true,
-          protocol = "inspector",
-          port = 9222,
-          webRoot = "${workspaceFolder}/src",
-          -- skip files from vite's hmr
-          skipFiles = { "**/node_modules/**/*", "**/@vite/*", "**/src/client/*", "**/src/*" },
+          resolveSourceMapLocations = {
+            "${workspaceFolder}/**",
+            "!**/node_modules/**",
+          },
+          processId = require("dap.utils").pick_process,
+          console = "integratedTerminal",
+          internalConsoleOptions = "neverOpen",
+          skipFiles = { "<node_internals>/**", "${workspaceFolder}/node_modules/**/*.js" },
         },
-        -- only if language is javascript, offer this debug action
-        language == "javascript"
-            and {
-              -- use nvim-dap-vscode-js's pwa-node debug adapter
-              type = "pwa-node",
-              -- launch a new process to attach the debugger to
-              request = "launch",
-              -- name of the debug action you have to select for this config
-              name = "Launch file in new node process",
-              -- launch current file
-              program = "${file}",
-              runtimeExecutable = "npx",
-              cwd = "${workspaceFolder}",
-            }
-          or nil,
       }
     end
 
-    -- require("dapui").setup()
     local dap, dapui = require("dap"), require("dapui")
     dap.listeners.after.event_initialized["dapui_config"] = function()
       dapui.open({ reset = true })
