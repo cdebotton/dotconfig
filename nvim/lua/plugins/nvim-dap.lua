@@ -54,7 +54,13 @@ return {
           cwd = "${workspaceFolder}",
           console = "integratedTerminal",
           internalConsoleOptions = "neverOpen",
-          skipFiles = { "<node_internals>/**", "${workspaceFolder}/node_modules/**/*.js" },
+          skipFiles = {
+            "<node_internals>/**",
+            "${workspaceFolder}/node_modules/**/*.js",
+            "**/node_modules/**",
+            "**/@vite/**",
+            "**/vite/dist/**",
+          },
         },
         {
           type = "pwa-chrome",
