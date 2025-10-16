@@ -3,9 +3,9 @@ return {
   opts = {
     formatters_by_ft = {
       lua = { "stylua" },
-      javascript = { "prettier", "eslint" },
-      typescript = { "prettier", "eslint" },
-      svelte = { "prettier", "eslint", "stylelint" },
+      javascript = { "prettier", "eslint_d" },
+      typescript = { "prettier", "eslint_d" },
+      svelte = { "prettier", "eslint_d", "stylelint" },
       css = { "stylelint" },
       python = { "black" },
       -- Add more file types and their respective formatters

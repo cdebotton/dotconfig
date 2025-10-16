@@ -72,6 +72,9 @@ return {
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         pyright = {},
+        eslint = {
+          enabled = false,
+        },
         rust_analyzer = {
           mason = false,
         },

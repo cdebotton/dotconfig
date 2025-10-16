@@ -51,7 +51,10 @@ return {
           runtimeExecutable = "npm",
           runtimeArgs = { "run", "dev" },
           rootPath = "${workspaceFolder}",
-          cwd = "${workspaceFolder}",
+          cwd = function()
+            local util = require("lspconfig.util")
+            return util.root_pattern("package.json")(vim.fn.expand("%:p")) or vim.fn.getcwd()
+          end,
           console = "integratedTerminal",
           internalConsoleOptions = "neverOpen",
           skipFiles = {
