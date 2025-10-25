@@ -98,8 +98,8 @@ require("conform").setup({
 		lua = { "stylua" },
 		rust = { "rustfmt", lsp_format = "fallback" },
 		javascript = { "prettierd", "prettier", stop_after_first = true },
-		typescript = { "prettierd", "prettier", stop_after_first = true },
-		svelte = { "prettierd", "prettier", stop_after_first = true },
+		typescript = { "eslint_d", "prettier" },
+		svelte = { "eslint_d", "prettier" },
 	},
 	format_on_save = {
 		-- I recommend these options. See :help conform.format for details.
