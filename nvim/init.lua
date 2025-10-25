@@ -26,6 +26,7 @@ vim.pack.add({
 	"https://github.com/rcarriga/nvim-dap-ui",
 	"https://github.com/nvim-neotest/neotest",
 	"https://github.com/nvim-neotest/nvim-nio",
+	"https://github.com/christoomey/vim-tmux-navigator",
 })
 
 vim.cmd([[
@@ -118,6 +119,11 @@ vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find f
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
 vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
+
+vim.keymap.set("n", "<C-h>", ":TmuxNavigateLeft<CR>", { silent = true })
+vim.keymap.set("n", "<C-l>", ":TmuxNavigateRight<CR>", { silent = true })
+vim.keymap.set("n", "<C-j>", ":TmuxNavigateDown<CR>", { silent = true })
+vim.keymap.set("n", "<C-k>", ":TmuxNavigateUp<CR>", { silent = true })
 
 require("yanky").setup()
 require("mini.icons").setup()
