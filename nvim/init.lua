@@ -11,6 +11,8 @@ vim.o.termguicolors = true
 vim.o.winborder = "rounded"
 vim.o.signcolumn = "yes"
 vim.o.wrap = false
+vim.o.splitright = true
+vim.o.splitbelow = true
 
 -- Add packages
 vim.pack.add({
@@ -178,6 +180,8 @@ vim.keymap.set("n", "<leader>w", ":write<CR>", { desc = "Save buffer" })
 vim.keymap.set("n", "<leader>q", ":quit<CR>", { desc = "Close buffer" })
 vim.keymap.set("n", "<leader>Q", ":quitall<CR>", { desc = "Close all buffers" })
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Oil" })
+vim.keymap.set("n", "<leader>wh", ":split<CR>", { desc = "Split horizontal" })
+vim.keymap.set("n", "<leader>wv", ":vsplit<CR>", { desc = "Split vertical" })
 
 -- Telescope keymap
 local builtin = require("telescope.builtin")
