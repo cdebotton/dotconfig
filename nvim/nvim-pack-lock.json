@@ -13,6 +13,10 @@
       "rev": "9fd3d5e",
       "src": "https://github.com/stevearc/conform.nvim"
     },
+    "live-command.nvim": {
+      "rev": "d23d94a",
+      "src": "https://github.com/smjonas/live-command.nvim"
+    },
     "mason-lspconfig.nvim": {
       "rev": "2304ff6",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
@@ -37,6 +41,10 @@
       "rev": "af58927",
       "src": "https://github.com/catppuccin/nvim"
     },
+    "nvim-autopairs": {
+      "rev": "7a2c97c",
+      "src": "https://github.com/windwp/nvim-autopairs"
+    },
     "nvim-dap": {
       "rev": "6782b09",
       "src": "https://github.com/mfussenegger/nvim-dap"
@@ -44,6 +52,10 @@
     "nvim-dap-ui": {
       "rev": "cf91d5e",
       "src": "https://github.com/rcarriga/nvim-dap-ui"
+    },
+    "nvim-dap-virtual-text": {
+      "rev": "fbdb48c",
+      "src": "https://github.com/theHamsta/nvim-dap-virtual-text"
     },
     "nvim-lint": {
       "rev": "9da1fb9",
