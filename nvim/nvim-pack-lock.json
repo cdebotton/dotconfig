@@ -89,6 +89,10 @@
       "rev": "21f5324",
       "src": "https://github.com/nvim-neotest/nvim-nio"
     },
+    "nvim-surround": {
+      "rev": "fcfa7e0",
+      "src": "https://github.com/kylechui/nvim-surround"
+    },
     "nvim-tmux-navigation": {
       "rev": "4898c98",
       "src": "https://github.com/alexghergh/nvim-tmux-navigation"
