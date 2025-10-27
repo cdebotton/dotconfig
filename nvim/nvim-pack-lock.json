@@ -41,6 +41,10 @@
       "rev": "64a23d0",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
+    "multicursor.nvim": {
+      "rev": "0c6ceae",
+      "src": "https://github.com/jake-stewart/multicursor.nvim"
+    },
     "neotest": {
       "rev": "3049c8f",
       "src": "https://github.com/nvim-neotest/neotest"

@@ -13,6 +13,11 @@ vim.o.signcolumn = "yes"
 vim.o.wrap = false
 vim.o.splitright = true
 vim.o.splitbelow = true
+vim.o.clipboard = "unnamedplus"
+vim.o.smartindent = true
+vim.o.incsearch = true
+vim.o.termguicolors = true
+vim.o.nu = true
 
 -- Color scheme
 vim.cmd([[

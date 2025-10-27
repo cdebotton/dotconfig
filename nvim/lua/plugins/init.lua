@@ -34,6 +34,7 @@ function M.install()
 		"https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
 		"https://github.com/jay-babu/mason-nvim-dap.nvim",
 		"https://github.com/kylechui/nvim-surround",
+		"https://github.com/jake-stewart/multicursor.nvim",
 	})
 end
 
@@ -54,6 +55,7 @@ function M.setup()
 	require("plugins.whick-key")
 	require("plugins.vim-tmux-navigator")
 	require("plugins.surround")
+	require("plugins.multicursor")
 end
 
 return M
