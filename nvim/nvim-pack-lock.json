@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "FixCursorHold.nvim": {
+      "rev": "1900f89",
+      "src": "https://github.com/antoinemadec/FixCursorHold.nvim"
+    },
     "blink.cmp": {
       "rev": "8743384",
       "src": "https://github.com/Saghen/blink.cmp",
@@ -21,6 +25,10 @@
       "rev": "2304ff6",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
+    "mason-nvim-dap.nvim": {
+      "rev": "9a10e09",
+      "src": "https://github.com/jay-babu/mason-nvim-dap.nvim"
+    },
     "mason-tool-installer.nvim": {
       "rev": "517ef59",
       "src": "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
@@ -34,8 +42,16 @@
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "neotest": {
-      "rev": "7166dc3",
+      "rev": "3049c8f",
       "src": "https://github.com/nvim-neotest/neotest"
+    },
+    "neotest-golang": {
+      "rev": "f8743de",
+      "src": "https://github.com/fredrikaverpil/neotest-golang"
+    },
+    "neotest-vitest": {
+      "rev": "f5560d7",
+      "src": "https://github.com/marilari88/neotest-vitest"
     },
     "nvim": {
       "rev": "af58927",
@@ -48,6 +64,10 @@
     "nvim-dap": {
       "rev": "6782b09",
       "src": "https://github.com/mfussenegger/nvim-dap"
+    },
+    "nvim-dap-go": {
+      "rev": "b442115",
+      "src": "https://github.com/leoluz/nvim-dap-go"
     },
     "nvim-dap-ui": {
       "rev": "cf91d5e",
@@ -74,8 +94,9 @@
       "src": "https://github.com/alexghergh/nvim-tmux-navigation"
     },
     "nvim-treesitter": {
-      "rev": "42fc28ba",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+      "rev": "738d9ced",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter",
+      "version": "'main'"
     },
     "nvim-web-devicons": {
       "rev": "b8221e4",
@@ -89,9 +110,17 @@
       "rev": "b9fd522",
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
+    "rustaceanvim": {
+      "rev": "88d13a7",
+      "src": "https://github.com/mrcjkb/rustaceanvim"
+    },
     "telescope.nvim": {
       "rev": "b4da76b",
       "src": "https://github.com/nvim-telescope/telescope.nvim"
+    },
+    "tree-sitter-go": {
+      "rev": "2346a3a",
+      "src": "https://github.com/tree-sitter/tree-sitter-go"
     },
     "vim-tmux-navigator": {
       "rev": "c45243d",
