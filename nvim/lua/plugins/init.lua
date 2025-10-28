@@ -35,6 +35,7 @@ function M.install()
 		"https://github.com/jay-babu/mason-nvim-dap.nvim",
 		"https://github.com/kylechui/nvim-surround",
 		"https://github.com/jake-stewart/multicursor.nvim",
+		"https://github.com/rachartier/tiny-inline-diagnostic.nvim",
 	})
 end
 
@@ -56,6 +57,7 @@ function M.setup()
 	require("plugins.vim-tmux-navigator")
 	require("plugins.surround")
 	require("plugins.multicursor")
+	require("plugins.diagnostics")
 end
 
 return M

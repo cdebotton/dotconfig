@@ -126,6 +126,10 @@
       "rev": "b4da76b",
       "src": "https://github.com/nvim-telescope/telescope.nvim"
     },
+    "tiny-inline-diagnostic.nvim": {
+      "rev": "994c13d",
+      "src": "https://github.com/rachartier/tiny-inline-diagnostic.nvim"
+    },
     "tree-sitter-go": {
       "rev": "2346a3a",
       "src": "https://github.com/tree-sitter/tree-sitter-go"

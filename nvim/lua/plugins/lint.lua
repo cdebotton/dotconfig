@@ -16,7 +16,6 @@ require("lint").linters_by_ft = {
 
 vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWritePost", "InsertLeave", "BufEnter", "TextChanged" }, {
 	callback = function(args)
-		local lint = require("lint")
 		local opts = { ignore_errors = args.event ~= "BufWritePost" }
 
 		-- Find clients for monorepo
@@ -38,6 +37,6 @@ vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "BufWritePost", "Inse
 			key, client = next(clients, key)
 		end
 
-		lint.try_lint(nil, opts)
+		require("lint").try_lint(nil, opts)
 	end,
 })

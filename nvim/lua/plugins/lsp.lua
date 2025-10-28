@@ -1,7 +1,5 @@
 -- Enable virtual text for diagnostics (autocomplete)
-vim.diagnostic.config({
-	virtual_text = true,
-})
+vim.diagnostic.config({})
 
 vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError" })
 vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticSignWarn" })
