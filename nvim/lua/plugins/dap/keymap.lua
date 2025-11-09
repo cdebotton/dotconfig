@@ -72,3 +72,12 @@ end, { desc = "Widgets" })
 vim.keymap.set("n", "<leader>du", function()
 	dapui.toggle({})
 end, { desc = "Toggle DAP UI" })
+
+vim.keymap.set("n", "<leader>dN", function()
+	vim.ui.input({ prompt = "Services (space seperated): " }, function(input)
+		if not input or input == "" then
+			return
+		end
+		vim.cmd("DapNew " .. input)
+	end)
+end)

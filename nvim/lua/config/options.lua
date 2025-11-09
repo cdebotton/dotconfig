@@ -18,8 +18,18 @@ vim.o.smartindent = true
 vim.o.incsearch = true
 vim.o.termguicolors = true
 vim.o.nu = true
-
+vim.opt.cursorline = true
 -- Color scheme
 vim.cmd([[
 	colorscheme catppuccin-mocha
 ]])
+
+vim.api.nvim_set_hl(0, "LineNr", {
+	fg = "#6c7086",
+	bg = "NONE", -- Use NONE for transparent background
+})
+
+vim.api.nvim_set_hl(0, "CursorLineNr", {
+	fg = "#89b4fa",
+	bold = true,
+})

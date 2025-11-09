@@ -36,6 +36,8 @@ function M.install()
 		"https://github.com/kylechui/nvim-surround",
 		"https://github.com/jake-stewart/multicursor.nvim",
 		"https://github.com/rachartier/tiny-inline-diagnostic.nvim",
+		"https://github.com/windwp/nvim-ts-autotag",
+		"https://github.com/saghen/blink.indent",
 	})
 end
 
@@ -58,6 +60,8 @@ function M.setup()
 	require("plugins.surround")
 	require("plugins.multicursor")
 	require("plugins.diagnostics")
+	require("plugins.nvim-ts-autotag")
+	require("plugins.indent")
 end
 
 return M

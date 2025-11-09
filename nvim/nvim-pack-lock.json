@@ -9,6 +9,10 @@
       "src": "https://github.com/Saghen/blink.cmp",
       "version": "1.0.0 - 2.0.0"
     },
+    "blink.indent": {
+      "rev": "6455b04",
+      "src": "https://github.com/saghen/blink.indent"
+    },
     "bufferline.nvim": {
       "rev": "655133c",
       "src": "https://github.com/akinsho/bufferline.nvim"
@@ -16,6 +20,10 @@
     "conform.nvim": {
       "rev": "9fd3d5e",
       "src": "https://github.com/stevearc/conform.nvim"
+    },
+    "indent-blankline.nvim": {
+      "rev": "005b560",
+      "src": "https://github.com/lukas-reineke/indent-blankline.nvim"
     },
     "live-command.nvim": {
       "rev": "d23d94a",
@@ -106,6 +114,10 @@
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
+    "nvim-ts-autotag": {
+      "rev": "c4ca798",
+      "src": "https://github.com/windwp/nvim-ts-autotag"
+    },
     "nvim-web-devicons": {
       "rev": "b8221e4",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
@@ -117,6 +129,10 @@
     "plenary.nvim": {
       "rev": "b9fd522",
       "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "rainbow-delimiters.nvim": {
+      "rev": "8aafe2c",
+      "src": "https://gitlab.com/HiPhish/rainbow-delimiters.nvim"
     },
     "rustaceanvim": {
       "rev": "88d13a7",
