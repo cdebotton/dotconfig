@@ -38,6 +38,7 @@ function M.install()
 		"https://github.com/rachartier/tiny-inline-diagnostic.nvim",
 		"https://github.com/windwp/nvim-ts-autotag",
 		"https://github.com/saghen/blink.indent",
+		"https://github.com/folke/todo-comments.nvim",
 	})
 end
 
@@ -62,6 +63,7 @@ function M.setup()
 	require("plugins.diagnostics")
 	require("plugins.nvim-ts-autotag")
 	require("plugins.indent")
+	require("plugins.todo")
 end
 
 return M

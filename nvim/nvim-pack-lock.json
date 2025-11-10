@@ -146,6 +146,10 @@
       "rev": "994c13d",
       "src": "https://github.com/rachartier/tiny-inline-diagnostic.nvim"
     },
+    "todo-comments.nvim": {
+      "rev": "31e3c38",
+      "src": "https://github.com/folke/todo-comments.nvim"
+    },
     "tree-sitter-go": {
       "rev": "2346a3a",
       "src": "https://github.com/tree-sitter/tree-sitter-go"
