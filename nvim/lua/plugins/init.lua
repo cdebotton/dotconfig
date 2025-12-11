@@ -39,6 +39,7 @@ function M.install()
 		"https://github.com/windwp/nvim-ts-autotag",
 		"https://github.com/saghen/blink.indent",
 		"https://github.com/folke/todo-comments.nvim",
+		"https://github.com/b0o/SchemaStore.nvim",
 	})
 end
 

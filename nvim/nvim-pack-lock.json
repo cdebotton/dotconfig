@@ -4,6 +4,10 @@
       "rev": "1900f89",
       "src": "https://github.com/antoinemadec/FixCursorHold.nvim"
     },
+    "SchemaStore.nvim": {
+      "rev": "c103ea3",
+      "src": "https://github.com/b0o/SchemaStore.nvim"
+    },
     "blink.cmp": {
       "rev": "8743384",
       "src": "https://github.com/Saghen/blink.cmp",

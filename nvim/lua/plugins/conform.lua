@@ -2,6 +2,7 @@ require("conform").setup({
 	formatters_by_ft = {
 		css = { "stylelint" },
 		json = { "prettierd" },
+		jsonc = { "prettierd" },
 		go = { "goimports", "gofmt" },
 		lua = { "stylua" },
 		rust = { "rustfmt", lsp_format = "fallback" },

@@ -30,3 +30,12 @@ vim.lsp.enable("ts_ls")
 vim.lsp.enable("svelte")
 vim.lsp.enable("gopls")
 vim.lsp.enable("rust_analyzer")
+vim.lsp.enable("jsonls")
+vim.lsp.config("jsonls", {
+	settings = {
+		json = {
+			schemas = require("schemastore").json.schemas(),
+			validate = { enable = true },
+		},
+	},
+})
