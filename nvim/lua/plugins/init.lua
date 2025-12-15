@@ -40,6 +40,7 @@ function M.install()
 		"https://github.com/saghen/blink.indent",
 		"https://github.com/folke/todo-comments.nvim",
 		"https://github.com/b0o/SchemaStore.nvim",
+		"https://github.com/eero-lehtinen/oklch-color-picker.nvim",
 		"https://github.com/uga-rosa/ccc.nvim",
 	})
 end
