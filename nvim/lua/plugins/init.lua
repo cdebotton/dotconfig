@@ -40,6 +40,7 @@ function M.install()
 		"https://github.com/saghen/blink.indent",
 		"https://github.com/folke/todo-comments.nvim",
 		"https://github.com/b0o/SchemaStore.nvim",
+		"https://github.com/uga-rosa/ccc.nvim",
 	})
 end
 
@@ -65,6 +66,7 @@ function M.setup()
 	require("plugins.nvim-ts-autotag")
 	require("plugins.indent")
 	require("plugins.todo")
+	require("plugins.color-picker")
 end
 
 return M

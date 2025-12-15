@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 vim.g.completion = true
 
-vim.o.smartindent = false
+vim.o.smartindent = true
 vim.o.swapfile = false
 vim.o.number = true
 vim.o.relativenumber = true

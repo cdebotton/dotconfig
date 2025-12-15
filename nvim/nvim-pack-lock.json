@@ -21,6 +21,10 @@
       "rev": "655133c",
       "src": "https://github.com/akinsho/bufferline.nvim"
     },
+    "ccc.nvim": {
+      "rev": "9d1a256",
+      "src": "https://github.com/uga-rosa/ccc.nvim"
+    },
     "conform.nvim": {
       "rev": "9fd3d5e",
       "src": "https://github.com/stevearc/conform.nvim"
@@ -129,6 +133,10 @@
     "oil.nvim": {
       "rev": "7e1cd77",
       "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "oklch-color-picker.nvim": {
+      "rev": "0c3c07a",
+      "src": "https://github.com/eero-lehtinen/oklch-color-picker.nvim"
     },
     "plenary.nvim": {
       "rev": "b9fd522",
