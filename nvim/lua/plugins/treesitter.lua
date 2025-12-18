@@ -5,10 +5,10 @@ require("nvim-treesitter").setup({
 	},
 })
 
-require("nvim-treesitter").install({ "javascript", "typescript", "svelte", "rust", "go", "lua", "css", "sql", "html" })
+require("nvim-treesitter").install({ "javascript", "typescript", "svelte", "rust", "go", "lua", "css", "html", "sql" })
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "go", "rust", "svelte", "typescript", "javascript", "lua", "python", "css", "sql", "html" },
+	pattern = { "go", "rust", "svelte", "typescript", "javascript", "lua", "python", "css", "html", "sql" },
 	callback = function()
 		vim.treesitter.start()
 	end,

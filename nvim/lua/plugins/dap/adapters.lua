@@ -80,21 +80,32 @@ for _, language in pairs({ "javascript", "typescript", "svelte" }) do
 end
 
 -- Go Debugging
-require("dap-go").setup({
-	dap_configurations = {
-		{
-			type = "go",
-			name = "Debug (Build Flags & Arguments)",
-			request = "launch",
-			program = "${file}",
-			args = require("dap-go").get_arguments,
-			buildFlags = require("dap-go").get_build_flags,
-		},
-		{
-			type = "go",
-			name = "Attach remote",
-			mode = "remote",
-			request = "attach",
-		},
-	},
-})
+require("dap-go").setup()
+-- require("dap-go").setup({
+-- 	dap_configurations = {
+-- 		{
+-- 			type = "go",
+-- 			name = "Debug (Build Flags)",
+-- 			request = "launch",
+-- 			program = "${file}",
+-- 			buildFlags = require("dap-go").get_build_flags,
+-- 		},
+-- 		{
+-- 			type = "go",
+-- 			name = "Debug (Build Flags & Arguments)",
+-- 			request = "launch",
+-- 			program = "${file}",
+-- 			args = require("dap-go").get_arguments,
+-- 			buildFlags = require("dap-go").get_build_flags,
+-- 		},
+-- 		{
+-- 			type = "go",
+-- 			name = "Attach local",
+-- 			mode = "local",
+-- 			processId = function()
+-- 				return require("dap.utils").pick_process({})
+-- 			end,
+-- 			request = "attach",
+-- 		}
+-- 	},
+-- })
