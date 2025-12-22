@@ -29,6 +29,7 @@ vim.lsp.config("lua_ls", {
 vim.lsp.enable("ts_ls")
 vim.lsp.enable("svelte")
 vim.lsp.enable("gopls")
+vim.lsp.enable("terraform-ls")
 vim.lsp.enable("rust_analyzer")
 vim.lsp.enable("jsonls")
 vim.lsp.config("jsonls", {
