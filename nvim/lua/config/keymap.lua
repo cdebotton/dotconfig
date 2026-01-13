@@ -7,6 +7,8 @@ vim.keymap.set("n", "<leader>sh", ":split<CR>", { desc = "Split horizontal" })
 vim.keymap.set("n", "<leader>sv", ":vsplit<CR>", { desc = "Split vertical" })
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>gD", vim.lsp.buf.declaration, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>W", ":set wrap!<CR>", { desc = "Toggle line wrap" })
+vim.keymap.set("n", "<leader>F", ":set filetype=", { desc = "Set filetype" })
 
 vim.keymap.set("n", "[d", function()
 	vim.diagnostic.jump({ count = -1 })

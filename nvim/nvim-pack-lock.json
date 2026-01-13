@@ -146,6 +146,10 @@
       "rev": "8aafe2c",
       "src": "https://gitlab.com/HiPhish/rainbow-delimiters.nvim"
     },
+    "render-markdown.nvim": {
+      "rev": "73a6ebc842cf81926eb1d424820b800f6f6a1227",
+      "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
+    },
     "rustaceanvim": {
       "rev": "88d13a7",
       "src": "https://github.com/mrcjkb/rustaceanvim"

@@ -42,6 +42,7 @@ function M.install()
 		"https://github.com/b0o/SchemaStore.nvim",
 		"https://github.com/eero-lehtinen/oklch-color-picker.nvim",
 		"https://github.com/uga-rosa/ccc.nvim",
+		"https://github.com/MeanderingProgrammer/render-markdown.nvim",
 	})
 end
 

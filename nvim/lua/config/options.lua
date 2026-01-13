@@ -13,6 +13,7 @@ vim.o.winborder = "rounded"
 vim.o.signcolumn = "yes"
 vim.o.wrap = false
 vim.o.splitright = true
+vim.o.linebreak = true
 vim.o.splitbelow = true
 vim.o.clipboard = "unnamedplus"
 vim.o.incsearch = true
