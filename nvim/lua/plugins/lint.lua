@@ -99,7 +99,9 @@ vim.api.nvim_create_autocmd(
 				end
 			end
 
-			require("lint").try_lint(nil, opts)
+			if linter_root then
+				require("lint").try_lint(nil, opts)
+			end
 		end,
 	}
 )
