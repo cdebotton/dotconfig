@@ -3,11 +3,11 @@ local lint = require("lint")
 lint.linters_by_ft = {
 	markdown = { "vale" },
 	lua = { "luacheck" },
-	javascript = { "oxlint" },
-	javascriptreact = { "oxlint" },
-	typescript = { "oxlint" },
-	typescriptreact = { "oxlint" },
-	svelte = { "oxlint", "stylelint" },
+	javascript = { "eslint_d" },
+	javascriptreact = { "eslint_d" },
+	typescript = { "eslint_d" },
+	typescriptreact = { "eslint_d" },
+	svelte = { "eslint_d", "stylelint" },
 	css = { "stylelint" },
 	scss = { "stylelint" },
 	less = { "stylelint" },
@@ -26,18 +26,8 @@ local function find_linter_root()
 	local filetype = vim.bo.filetype
 
 	-- Define shared marker lists
-	local eslint_markers = {
-		".oxlintrc.json",
-		".eslintrc.js",
-		".eslintrc.cjs",
-		".eslintrc.json",
-		".eslintrc.yml",
-		".eslintrc.yaml",
-		"eslint.config.js",
-		"eslint.config.mjs",
-		"eslint.config.cjs",
-		"eslint.config.ts",
-	}
+	local eslint_markers =
+		{ ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json", ".eslintrc.yml", "eslint.config.js", "package.json" }
 	local stylelint_markers =
 		{ ".stylelintrc.json", ".stylelintrc.js", ".stylelintrc.cjs", "stylelint.config.js", "package.json" }
 

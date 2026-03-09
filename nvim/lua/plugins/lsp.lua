@@ -26,8 +26,6 @@ vim.lsp.config("lua_ls", {
 		},
 	},
 })
-vim.lsp.enable("oxlint")
-vim.lsp.enable("oxfmt")
 vim.lsp.enable("ts_ls")
 vim.lsp.enable("svelte")
 vim.lsp.enable("gopls")
