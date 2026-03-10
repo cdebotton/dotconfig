@@ -43,6 +43,7 @@ function M.install()
 		"https://github.com/eero-lehtinen/oklch-color-picker.nvim",
 		"https://github.com/uga-rosa/ccc.nvim",
 		"https://github.com/MeanderingProgrammer/render-markdown.nvim",
+		"https://github.com/petertriho/nvim-scrollbar",
 	})
 end
 
@@ -69,6 +70,7 @@ function M.setup()
 	require("plugins.indent")
 	require("plugins.todo")
 	require("plugins.color-picker")
+	require("plugins.scrollbar")
 end
 
 return M
