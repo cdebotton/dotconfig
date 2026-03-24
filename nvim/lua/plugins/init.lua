@@ -8,6 +8,7 @@ function M.install()
 		"https://github.com/smjonas/live-command.nvim",
 		{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 		"https://github.com/tree-sitter/tree-sitter-go",
+		"https://github.com/nvim-treesitter/nvim-treesitter-context",
 		"https://github.com/catppuccin/nvim",
 		{ src = "https://github.com/Saghen/blink.cmp", version = vim.version.range("1.*") },
 		"https://github.com/neovim/nvim-lspconfig",
@@ -44,7 +45,15 @@ function M.install()
 		"https://github.com/uga-rosa/ccc.nvim",
 		"https://github.com/MeanderingProgrammer/render-markdown.nvim",
 		"https://github.com/petertriho/nvim-scrollbar",
+		"https://github.com/nvim-telescope/telescope-fzf-native.nvim",
+		"https://github.com/Bekaboo/dropbar.nvim",
 	})
+
+	-- Build telescope-fzf-native if not already compiled
+	local fzf_dir = vim.fn.stdpath("data") .. "/site/pack/core/opt/telescope-fzf-native.nvim"
+	if vim.uv.fs_stat(fzf_dir) and not vim.uv.fs_stat(fzf_dir .. "/build/libfzf.so") and not vim.uv.fs_stat(fzf_dir .. "/build/libfzf.dylib") then
+		vim.fn.system({ "make", "-C", fzf_dir })
+	end
 end
 
 function M.setup()
@@ -71,6 +80,7 @@ function M.setup()
 	require("plugins.todo")
 	require("plugins.color-picker")
 	require("plugins.scrollbar")
+	require("plugins.dropbar")
 end
 
 return M
