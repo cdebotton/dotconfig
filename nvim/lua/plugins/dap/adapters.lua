@@ -48,6 +48,77 @@ for _, language in pairs({ "javascript", "typescript", "svelte" }) do
 		{
 			type = "pwa-node",
 			request = "attach",
+			name = "Attach to node debugger (port)",
+			port = function()
+				local input = vim.fn.input("Debugger port: ", "9229")
+				return tonumber(input)
+			end,
+			sourceMaps = true,
+			resolveSourceMapLocations = {
+				"${workspaceFolder}/**",
+				"!**/node_modules/**",
+			},
+			cwd = function()
+				local workspace = vim.fn.getcwd()
+
+				local function find_monorepo_packages()
+					local packages = {}
+					-- Check for common monorepo indicators
+					local indicators = { "pnpm-workspace.yaml", "lerna.json", "turbo.json", "nx.json" }
+					local is_monorepo = false
+					for _, file in ipairs(indicators) do
+						if vim.fn.filereadable(workspace .. "/" .. file) == 1 then
+							is_monorepo = true
+							break
+						end
+					end
+					if not is_monorepo then
+						local pkg_json = workspace .. "/package.json"
+						if vim.fn.filereadable(pkg_json) == 1 then
+							local text = table.concat(vim.fn.readfile(pkg_json), "\n")
+							if text:find('"workspaces"') then
+								is_monorepo = true
+							end
+						end
+					end
+					if not is_monorepo then
+						return nil
+					end
+					-- Collect packages from common monorepo dirs
+					for _, dir in ipairs({ "packages", "apps", "libs", "services" }) do
+						local full_dir = workspace .. "/" .. dir
+						if vim.fn.isdirectory(full_dir) == 1 then
+							for _, entry in ipairs(vim.fn.readdir(full_dir)) do
+								local pkg_path = full_dir .. "/" .. entry
+								if vim.fn.isdirectory(pkg_path) == 1 and vim.fn.filereadable(pkg_path .. "/package.json") == 1 then
+									table.insert(packages, pkg_path)
+								end
+							end
+						end
+					end
+					return #packages > 0 and packages or nil
+				end
+
+				local packages = find_monorepo_packages()
+				if not packages then
+					return workspace
+				end
+
+				local choices = { "Select package:" }
+				for i, pkg in ipairs(packages) do
+					table.insert(choices, i .. ". " .. pkg:gsub(workspace .. "/", ""))
+				end
+				local choice = vim.fn.inputlist(choices)
+				if choice > 0 and choice <= #packages then
+					return packages[choice]
+				end
+				return workspace
+			end,
+			skipFiles = { "${workspaceFolder}/node_modules/**/*.js" },
+		},
+		{
+			type = "pwa-node",
+			request = "attach",
 			processId = require("dap.utils").pick_process,
 			name = "Attach debugger to existing node --inspect",
 			sourceMaps = true,
