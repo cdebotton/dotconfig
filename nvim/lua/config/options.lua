@@ -34,3 +34,6 @@ vim.api.nvim_set_hl(0, "CursorLineNr", {
 	fg = "#89b4fa",
 	bold = true,
 })
+
+vim.cmd("packadd nvim.undotree")
+vim.keymap.set("n", "<leader>u", require("undotree").open)

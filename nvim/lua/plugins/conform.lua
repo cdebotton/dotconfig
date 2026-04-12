@@ -1,13 +1,13 @@
 require("conform").setup({
 	formatters_by_ft = {
 		css = { "stylelint" },
-		json = { "prettierd" },
-		jsonc = { "prettierd" },
+		json = { "oxfmt" },
+		jsonc = { "oxfmt" },
 		go = { "goimports", "gofmt" },
 		lua = { "stylua" },
 		rust = { "rustfmt", lsp_format = "fallback" },
-		javascript = { "prettierd", "eslint_d" },
-		typescript = { "eslint_d", "prettierd" },
+		javascript = { "oxfmt", "oxlint" },
+		typescript = { "oxfmt", "oxlint" },
 		svelte = { "eslint_d", "prettierd", "stylelint" },
 	},
 	format_on_save = {
