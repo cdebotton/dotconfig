@@ -6,9 +6,9 @@ require("conform").setup({
 		go = { "goimports", "gofmt" },
 		lua = { "stylua" },
 		rust = { "rustfmt", lsp_format = "fallback" },
-		javascript = { "oxfmt", "oxlint" },
-		typescript = { "oxfmt", "oxlint" },
-		svelte = { "eslint_d", "prettierd", "stylelint" },
+		javascript = { "oxfmt", "eslint_d" },
+		typescript = { "oxfmt", "eslint_d" },
+		svelte = { "eslint_d", "oxfmt", "stylelint" },
 	},
 	format_on_save = {
 		-- I recommend these options. See :help conform.format for details.
