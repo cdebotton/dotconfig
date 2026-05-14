@@ -1,6 +1,6 @@
 require("conform").setup({
 	formatters_by_ft = {
-		css = { "stylelint" },
+		css = { "stylelint", "oxfmt" },
 		json = { "oxfmt" },
 		jsonc = { "oxfmt" },
 		go = { "goimports", "gofmt" },
@@ -11,10 +11,10 @@ require("conform").setup({
 		typescript = { "oxfmt", "eslint_d" },
 		typescriptreact = { "oxfmt", "eslint_d" },
 		svelte = { "eslint_d", "oxfmt", "stylelint" },
-		scss = { "stylelint" },
-		less = { "stylelint" },
-		sass = { "stylelint" },
-		postcss = { "stylelint" },
+		scss = { "stylelint", "oxfmt" },
+		less = { "stylelint", "oxfmt" },
+		sass = { "stylelint", "oxfmt" },
+		postcss = { "stylelint", "oxfmt" },
 	},
 	format_on_save = {
 		-- I recommend these options. See :help conform.format for details.
