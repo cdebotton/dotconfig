@@ -2,6 +2,7 @@ local dap = require("dap")
 local dapui = require("dapui")
 
 vim.fn.sign_define("DapBreakpoint", { text = "●", texthl = "DiagnosticError", numhl = "" })
+vim.fn.sign_define("DapBreakpointRejected", { text = "○", texthl = "DiagnosticWarn", numhl = "" })
 vim.fn.sign_define("DapStopped", { text = "▸", texthl = "DiagnosticInfo", numhl = "" })
 
 dapui.setup({

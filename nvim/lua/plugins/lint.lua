@@ -82,7 +82,7 @@ vim.api.nvim_create_autocmd(
 	{ "BufReadPost", "BufNewFile", "BufWritePost", "InsertLeave", "BufEnter", "TextChanged", "TextChangedI" },
 	{
 		callback = function(args)
-			local opts = { ignore_errors = args.event ~= "BufWritePost" }
+			local opts = { ignore_errors = true }
 
 			-- Try to find package root based on linter config files
 			local linter_root = find_linter_root()

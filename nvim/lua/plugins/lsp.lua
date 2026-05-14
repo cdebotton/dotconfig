@@ -26,7 +26,8 @@ vim.lsp.config("lua_ls", {
 		},
 	},
 })
-vim.lsp.enable("ts_ls")
+vim.lsp.enable("ts_ls", false)
+vim.lsp.enable("tsgo")
 vim.lsp.enable("svelte")
 vim.lsp.enable("gopls")
 vim.lsp.enable("terraform-ls")
